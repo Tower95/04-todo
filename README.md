@@ -1,6 +1,6 @@
-# Webpack Starter
+# TODO App
 
-## This is a initial procject to use Webpackk
+## Simple TODO App in Javascrip 
 
 ### Notes
 Install dependencis

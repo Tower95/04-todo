@@ -1,9 +1,18 @@
-import {saludar} from './js/components';
+'use strict'
 import  './styles.css';
 
-const nombre = 'Ismael';
+import{ Todo, TodoList } from './classes'
 
-saludar(nombre);
+let task = new Todo('learn to program Javascript');
+
+let todoList = new TodoList();
+
+todoList.newTodo(task);
+
+console.log(todoList.todos);
+
+
+
 
 
 
