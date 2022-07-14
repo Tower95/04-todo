@@ -1,25 +1,30 @@
 'use strict'
-import '../css/components.css';
-import webpacklogo  from '../assets/img/webpack-logo.png'
 
-  export const saludar =  (nombre = 'sin nombre') => {
-  
-  console.log('Creando etiqueta h1');
 
-  const h1 = document.createElement('h1');
+// Reference to HTML
+  let todoListDiv = document.querySelector('.todo-list');
+  let newTodoInput = document.querySelector('.new-todo');
+
+
+export const createHTML = (todo) => {
+
+  const htmlTodo = `
+    <li class="${ (todo.complet ) ? 'completed': ''  }" data-id="${todo.id}">
+      <div class="view">
+        <input class="toggle" type="checkbox" ${(todo.complet) ? 'checked' : ''}>
+        <label>${todo.task}</label>
+        <button class="destroy"></button>
+      </div>
+      <input class="edit" value="Create a TodoMVC template">
+    </li> 
+  `;
   
-  h1.innerText = `Hola, ${nombre} !`;
-  
-  console.log(webpacklogo);
-  
-  document.body.append(h1);
-  
-  // const img= document.createElement('img');
-  // img.src = webpacklogo;
-  // document.body.append(img);
-  
+  let div = document.createElement('div');
+
+  div.innerHTML = htmlTodo;
+
+  todoListDiv.append(div.firstElementChild);
+
+  return div; 
 
 }
-
-
-

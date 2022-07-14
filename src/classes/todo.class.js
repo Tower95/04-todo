@@ -7,7 +7,7 @@ export class Todo {
 
     this.id = new Date().getTime();
 
-    this.finish = false;
+    this.complet = false;
 
     this.created_at = new Date();
 
