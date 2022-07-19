@@ -55,5 +55,11 @@ todoListDiv.addEventListener('click',(event)=>{
 
   }
 
+  if(nameElement.includes('button')){
+    todoList.deleteTodo(todoId);
+    todoListDiv.removeChild(todoElement)
+  }
+
+
 });
 

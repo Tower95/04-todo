@@ -15,7 +15,7 @@ export class TodoList {
   }
 
   deleteTodo(id){
-    this.todo = this.todo.filter((todo)=>{todo.id != id});
+    this.todos = this.todos.filter((todo)=>{todo.id != id});
   }
 
   markComplete(id){
