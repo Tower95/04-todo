@@ -18,7 +18,16 @@ export class TodoList {
     this.todo = this.todo.filter((todo)=>{todo.id != id});
   }
 
-  togleTodo(id){
+  markComplete(id){
+
+    for(const todo of this.todos){
+      console.log(id, todo,id)
+      if(todo.id == id){
+
+        todo.complete = !todo.complete;
+        break;
+      }
+    }
 
   }
 
