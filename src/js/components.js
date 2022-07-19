@@ -5,7 +5,7 @@ import { todoList } from '../index';
 // Reference to HTML
 const todoListDiv = document.querySelector('.todo-list');
 const txtInputTodo = document.querySelector('.new-todo');
-
+const earaseCompletedButton = document.querySelector('.clear-completed');
 
 export const createHTML = (todo) => {
 
@@ -63,3 +63,20 @@ todoListDiv.addEventListener('click',(event)=>{
 
 });
 
+earaseCompletedButton.addEventListener('click',(event)=>{
+  console.log('pressing buttom');
+  todoList.deleteCompleted();
+
+  for(let i = todoListDiv.children.length-1; i >= 0 ; i-- ){
+
+    const element = todoListDiv.children[i];
+    
+    if(element.classList.contains('completed')){
+
+      todoListDiv.removeChild(element);
+
+    }
+
+  }
+  
+});
