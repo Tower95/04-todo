@@ -1,5 +1,5 @@
 'use strict'
-
+import {Todo} from './todo.class';
 export class TodoList {
 
   constructor() {
@@ -11,7 +11,7 @@ export class TodoList {
   newTodo(todo) {
 
     this.todos.push(todo);
-    this.saveInLocalStorage()
+    this.saveInLocalStorage();
 
   }
 
@@ -51,7 +51,9 @@ export class TodoList {
 
     this.todos = (localStorage.getItem('todo') != undefined) ?
       JSON.parse(localStorage.getItem('todo')) : [];
-
+      
+      this.todos = this.todos.map( Todo.fromJson);
     }
+
 
 }

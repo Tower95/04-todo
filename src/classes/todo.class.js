@@ -2,7 +2,17 @@
 
 export class Todo {
 
-  constructor(task){
+  static fromJson({ id, complete, task, created_at }) {
+
+    const tempTodo = new Todo(task);
+    tempTodo.id = id;
+    tempTodo.complete = complete;
+    tempTodo.created_at = created_at
+
+    return tempTodo
+  }
+
+  constructor(task) {
     this.task = task;
 
     this.id = new Date().getTime();
